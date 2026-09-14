@@ -412,8 +412,8 @@
         <div class="flex items-center space-x-3">
           <div class="w-8 h-8 rounded-lg bg-sky-100 text-sky-700 flex items-center justify-center font-bold text-sm">參</div>
           <div>
-            <h2 class="text-xl font-bold text-slate-900">工程圖說與施工剖面節點詳圖（SVG 向量圖）</h2>
-            <p class="text-xs text-slate-500 mt-0.5">具備標準工程尺寸引線、材質填充剖面與管制界限之高解析度向量圖</p>
+            <h2 class="text-xl font-bold text-slate-900">工程概念圖與施工剖面節點示意（SVG 向量圖）</h2>
+            <p class="text-xs text-slate-500 mt-0.5">供方案審議與專業設計溝通；不得直接作為發包、施工或驗收圖</p>
           </div>
         </div>
         <!-- Diagram Switcher Tabs -->
@@ -426,13 +426,16 @@
       </div>
 
       <div class="mt-6">
+        <div class="mb-4 p-3 rounded-lg bg-amber-50 border border-amber-200 text-amber-800 text-xs leading-relaxed">
+          <strong>圖說共通聲明：</strong>本章為 v2 概念示意，圖面比例僅供參考。所有尺寸、跨距、構件、錨栓、載重、防水、防墜與逃生設計，均須依現場丈量、原核准圖說及建築師／結構技師等適任專業人員簽認後定案；施工前應完成依法所需程序。
+        </div>
 
         <!-- DIAGRAM 1: SECTION VIEW -->
         <div id="diag-1" class="diagram-block block">
           <div class="border border-slate-200 rounded-xl p-4 bg-slate-900 text-slate-100 shadow-inner">
             <div class="flex justify-between items-center text-xs text-slate-400 mb-2 font-mono">
-              <span>DRAWING NO: FX-SEC-01 (縱向剖面：外樑 vs 女兒牆空間關係與管制界限)</span>
-              <span>SCALE: 1:20 @ A3</span>
+              <span>FX-SEC-01｜REV v2｜概念縱剖面：外樑、女兒牆與待確認界線</span>
+              <span>NTS｜不得逕行施工</span>
             </div>
             <div class="bg-white rounded-lg p-2 overflow-x-auto">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 660" class="w-full h-auto min-w-[780px]" style="background:#ffffff; font-family:'Noto Sans TC', sans-serif;">
@@ -452,7 +455,7 @@
                 </defs>
 
                 <!-- 標題 -->
-                <text x="440" y="30" font-size="16" font-weight="bold" fill="#0f172a" text-anchor="middle">後陽台縱向空間剖面圖（外樑、天井開口、女兒牆與退縮邊界）</text>
+                <text x="440" y="30" font-size="16" font-weight="bold" fill="#0f172a" text-anchor="middle">後陽台縱向空間概念剖面圖（尺寸及界線待專業確認）</text>
 
                 <!-- 1. 最外側：上層 RC 外樑 (頂) -->
                 <rect x="50" y="55" width="220" height="55" fill="#e2e8f0" stroke="#334155" stroke-width="2"></rect>
@@ -464,10 +467,10 @@
                 <rect x="180" y="440" width="90" height="150" fill="url(#rcHatch1)"></rect>
                 <text x="225" y="525" font-size="12" font-weight="bold" fill="#1e293b" text-anchor="middle" transform="rotate(-90 225 525)">下層建築 RC 外深樑</text>
 
-                <!-- 建築外立面 / 滴水線 (紅色虛線) -->
+                <!-- 現場外樑外緣量測參考線（不等同法定界線） -->
                 <line x1="270" y1="50" x2="270" y2="620" stroke="#dc2626" stroke-width="2.2" stroke-dasharray="6,4"></line>
                 <rect x="275" y="590" width="250" height="24" fill="#fee2e2" rx="4"></rect>
-                <text x="280" y="606" font-size="11" font-weight="bold" fill="#b91c1c">建築外立面滴水線（絕對嚴禁超越此線）</text>
+                <text x="280" y="606" font-size="11" font-weight="bold" fill="#b91c1c">現場外樑外緣參考線（原核准外牆線待建築師確認）</text>
 
                 <!-- 3. 內側：後陽台實體地坪與女兒牆 (最右側) -->
                 <rect x="670" y="320" width="70" height="120" fill="#e2e8f0" stroke="#334155" stroke-width="2"></rect>
@@ -484,7 +487,7 @@
                 <line x1="270" y1="410" x2="670" y2="410" stroke="#0284c7" stroke-width="1.5" stroke-dasharray="4,3"></line>
                 <line x1="270" y1="410" x2="270" y2="430" stroke="#0284c7" stroke-width="1"></line>
                 <line x1="670" y1="410" x2="670" y2="430" stroke="#0284c7" stroke-width="1"></line>
-                <text x="470" y="402" font-size="11" font-weight="bold" fill="#0284c7" text-anchor="middle">小天井挑空跨距（約 800 ~ 1200 mm）</text>
+                <text x="470" y="402" font-size="11" font-weight="bold" fill="#0284c7" text-anchor="middle">小天井實際淨跨 W（須逐戶現場丈量）</text>
 
                 <!-- 結構關係指示框：外樑 ≠ 女兒牆 -->
                 <rect x="490" y="65" width="360" height="42" fill="#f8fafc" stroke="#0284c7" stroke-width="1.5" rx="6"></rect>
@@ -551,7 +554,7 @@
                 <!-- 天井自然通風箭頭 -->
                 <path d="M 330 560 L 330 490" fill="none" stroke="#38bdf8" stroke-width="2.5" marker-end="url(#arrowBlue1)"></path>
                 <path d="M 490 560 L 490 490" fill="none" stroke="#38bdf8" stroke-width="2.5" marker-end="url(#arrowBlue1)"></path>
-                <text x="410" y="635" font-size="11" fill="#0284c7" font-weight="bold" text-anchor="middle">垂直通風天井挑空（透空率 ≧ 60%，嚴禁覆蓋密封實板）</text>
+                <text x="410" y="635" font-size="11" fill="#0284c7" font-weight="bold" text-anchor="middle">天井採光、通風及合法性須依原核准圖說與主管機關認定</text>
               </svg>
             </div>
           </div>
@@ -561,8 +564,8 @@
         <div id="diag-2" class="diagram-block hidden">
           <div class="border border-slate-200 rounded-xl p-4 bg-slate-900 text-slate-100 shadow-inner">
             <div class="flex justify-between items-center text-xs text-slate-400 mb-2 font-mono">
-              <span>DRAWING NO: FX-DTL-02 (水溝蓋端部錨固托架與防翻詳圖)</span>
-              <span>SCALE: 1:5 FULL DETAIL</span>
+              <span>FX-DTL-02｜REV v2｜格柵端部支承與防翻概念節點</span>
+              <span>NTS｜須結構技師簽認</span>
             </div>
             <div class="bg-white rounded-lg p-2 overflow-x-auto">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 440" class="w-full h-auto min-w-[720px]" style="background:#ffffff; font-family:'Noto Sans TC', sans-serif;">
@@ -578,7 +581,7 @@
                   </marker>
                 </defs>
 
-                <text x="410" y="30" font-size="16" font-weight="bold" fill="#0f172a" text-anchor="middle">水溝蓋（鋼格板）端部錨固托架與防掉落網構造詳圖（Detail Node）</text>
+                <text x="410" y="30" font-size="16" font-weight="bold" fill="#0f172a" text-anchor="middle">檢修格柵端部支承與防落措施概念節點（不得直接施工）</text>
 
                 <!-- RC 結構牆體 -->
                 <rect x="40" y="60" width="140" height="340" fill="#e2e8f0" stroke="#334155" stroke-width="2"></rect>
@@ -622,7 +625,7 @@
                 <!-- 標註群組 -->
                 <!-- 1. 馬鞍夾 -->
                 <text x="440" y="85" font-size="12" font-weight="bold" fill="#db2777">不鏽鋼專用馬鞍夾（Saddle Clip）</text>
-                <text x="440" y="103" font-size="10" fill="#64748b">每單元 4 組對角對鎖，嚴格杜絕踩踏翻覆翹起</text>
+                <text x="440" y="103" font-size="10" fill="#64748b">扣件型式、數量與間距依格柵製造商及結構計算確認</text>
                 <path d="M 435 88 L 290 88" fill="none" stroke="#db2777" stroke-width="1.5" marker-end="url(#arrowPink)"></path>
 
                 <!-- 2. 鋸齒防滑扁鋼 -->
@@ -631,15 +634,19 @@
                 <path d="M 435 142 L 325 115" fill="none" stroke="#ea580c" stroke-width="1.5" marker-end="url(#arrowOrange)"></path>
 
                 <!-- 3. 防掉落細目網 -->
-                <text x="440" y="195" font-size="12" font-weight="bold" fill="#d97706">底層防掉落細目網（強制滿鋪）</text>
-                <text x="440" y="213" font-size="10" fill="#64748b">SUS304 擴張網（孔徑 5~10 mm），阻擋螺絲及手工具穿透</text>
+                <text x="440" y="195" font-size="12" font-weight="bold" fill="#d97706">底層防掉落措施（型式待專業設計）</text>
+                <text x="440" y="213" font-size="10" fill="#64748b">須兼顧防落、排水、耐蝕與可維護性，材質及孔徑另行核定</text>
                 <path d="M 435 198 L 340 184" fill="none" stroke="#d97706" stroke-width="1.5" marker-end="url(#arrowOrange)"></path>
 
                 <!-- 4. 角鋼托架與化學錨栓 -->
-                <text x="440" y="255" font-size="12" font-weight="bold" fill="#0f172a">L 50 × 50 × 5 mm 熱浸鍍鋅角鋼托架</text>
-                <text x="440" y="275" font-size="11" fill="#0284c7" font-weight="bold">M10 不銹鋼化學錨栓（植入深度 ≧ 50mm）</text>
-                <text x="440" y="293" font-size="10" fill="#64748b">鑽孔周圍滿注抗 UV 耐候型防水矽利康膠阻水</text>
+                <text x="440" y="255" font-size="12" font-weight="bold" fill="#0f172a">托架斷面與支承長度：依淨跨 W 及載重計算</text>
+                <text x="440" y="275" font-size="11" fill="#0284c7" font-weight="bold">錨栓規格、數量、間距、植深及基材強度：待技師核定</text>
+                <text x="440" y="293" font-size="10" fill="#64748b">鑽孔前探測鋼筋；不得損傷主筋，完成後恢復外牆防水</text>
                 <path d="M 435 265 L 220 240" fill="none" stroke="#0f172a" stroke-width="1.5" marker-end="url(#arrowPink)"></path>
+                <rect x="210" y="325" width="570" height="80" fill="#fff7ed" stroke="#fb923c" rx="6"></rect>
+                <text x="225" y="346" font-size="11" font-weight="bold" fill="#9a3412">結構設計輸入資料（施工圖必填）</text>
+                <text x="225" y="366" font-size="10" fill="#7c2d12">淨跨 W、支承長度、格柵方向、設計載重與載重組合、容許撓度、焊道／扣件規格</text>
+                <text x="225" y="386" font-size="10" fill="#7c2d12">錨栓配置與基材強度、防腐及異種金屬隔離；結構技師：＿＿＿＿　日期：＿＿＿＿</text>
               </svg>
             </div>
           </div>
@@ -649,13 +656,13 @@
         <div id="diag-3" class="diagram-block hidden">
           <div class="border border-slate-200 rounded-xl p-4 bg-slate-900 text-slate-100 shadow-inner">
             <div class="flex justify-between items-center text-xs text-slate-400 mb-2 font-mono">
-              <span>DRAWING NO: FX-ELV-03 (兩大冷氣施作樣態立面對照與天井平台安全)</span>
-              <span>TYPE A VS TYPE B</span>
+              <span>FX-ELV-03｜REV v2｜現況配置方案比較</span>
+              <span>非合規判定｜TYPE A / B</span>
             </div>
             <div class="bg-white rounded-lg p-2 overflow-x-auto">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 520" class="w-full h-auto min-w-[760px]" style="background:#ffffff; font-family:'Noto Sans TC', sans-serif;">
                 <!-- 標題 -->
-                <text x="420" y="28" font-size="16" font-weight="bold" fill="#0f172a" text-anchor="middle">後陽台空間配置與兩大施作樣態立面對照圖（含水溝蓋安全共通規範）</text>
+                <text x="420" y="28" font-size="16" font-weight="bold" fill="#0f172a" text-anchor="middle">後陽台現況配置方案比較（不代表合法或核准樣式）</text>
 
                 <!-- 上樑頂板 -->
                 <rect x="30" y="45" width="780" height="30" fill="#cbd5e1" stroke="#334155" stroke-width="1.5"></rect>
@@ -721,14 +728,16 @@
 
                 <!-- 樣態 B 水溝蓋警示框 (核心補正) -->
                 <rect x="455" y="340" width="340" height="30" fill="#fef2f2" stroke="#ef4444" stroke-width="1.2" rx="4"></rect>
-                <text x="625" y="354" font-size="9.5" font-weight="bold" fill="#b91c1c" text-anchor="middle">⚠ 樣態 B 若加裝水溝蓋，同樣面臨小天井挑空高空安全問題！</text>
+                <text x="625" y="354" font-size="9.5" font-weight="bold" fill="#b91c1c" text-anchor="middle">樣態 B 若增設格柵，須另行審查天井合法性及高處作業風險</text>
                 <text x="625" y="366" font-size="8.5" fill="#991b1b" text-anchor="middle">承載、扣件與防落措施均須依現場條件專業確認</text>
 
                 <!-- 樣態 B 下方地坪 -->
                 <rect x="440" y="385" width="370" height="18" fill="#475569"></rect>
-                <text x="625" y="398" font-size="10" font-weight="bold" fill="#f8fafc" text-anchor="middle">天井檢修鋼格柵（水溝蓋／選設，安全規範完全一致）</text>
+                <text x="625" y="398" font-size="10" font-weight="bold" fill="#f8fafc" text-anchor="middle">天井檢修格柵（選設；須個案審查與結構設計）</text>
                 <rect x="440" y="405" width="370" height="65" fill="#e2e8f0" stroke="#334155" stroke-width="1.5"></rect>
                 <text x="625" y="442" font-size="11" font-weight="bold" fill="#475569" text-anchor="middle">後陽台實體主結構牆與樓地板</text>
+                <rect x="42" y="480" width="756" height="30" fill="#f8fafc" stroke="#94a3b8" rx="5"></rect>
+                <text x="420" y="499" font-size="9.5" fill="#334155" text-anchor="middle">比較項目：原核准圖相符性、維修動線、排熱距離、窗口遮蔽、外牆錨定、墜落及物件掉落風險</text>
               </svg>
             </div>
           </div>
@@ -738,12 +747,12 @@
         <div id="diag-4" class="diagram-block hidden">
           <div class="border border-slate-200 rounded-xl p-4 bg-slate-900 text-slate-100 shadow-inner">
             <div class="flex justify-between items-center text-xs text-slate-400 mb-2 font-mono">
-              <span>DRAWING NO: FX-DTL-04 (隱形鐵窗快拆開口與修飾管槽詳圖)</span>
-              <span>SCALE: 1:10 DETAIL</span>
+              <span>FX-DTL-04｜REV v2｜防墜系統檢修口與管槽概念節點</span>
+              <span>NTS｜須防墜與逃生審查</span>
             </div>
             <div class="bg-white rounded-lg p-2 overflow-x-auto">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 440" class="w-full h-auto min-w-[720px]" style="background:#ffffff; font-family:'Noto Sans TC', sans-serif;">
-                <text x="410" y="28" font-size="16" font-weight="bold" fill="#0f172a" text-anchor="middle">隱形鐵窗活動檢修開口與管線修飾盒節點詳圖</text>
+                <text x="410" y="28" font-size="16" font-weight="bold" fill="#0f172a" text-anchor="middle">防墜系統活動檢修口與管槽概念節點（不得直接施工）</text>
 
                 <!-- 左側：快拆活動框 -->
                 <rect x="40" y="60" width="350" height="350" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" rx="8"></rect>
@@ -778,8 +787,9 @@
                 <circle cx="158" cy="312" r="4" fill="#15803d"></circle>
                 <circle cx="272" cy="312" r="4" fill="#15803d"></circle>
                 <text x="215" y="240" font-size="11" font-weight="bold" fill="#15803d" text-anchor="middle">快拆活動檢修口</text>
-                <text x="215" y="258" font-size="9" fill="#166534" text-anchor="middle">(60cm × 80cm 側開端子)</text>
-                <text x="215" y="345" font-size="9" fill="#64748b" text-anchor="middle">平時機械鎖固防墜，維修時拆卸活動端子免剪鋼索</text>
+                <text x="215" y="258" font-size="9" fill="#166534" text-anchor="middle">提案尺寸 60 × 80 cm（待專業確認）</text>
+                <text x="215" y="340" font-size="8.5" fill="#64748b" text-anchor="middle">須具防兒童誤開鎖定及成人緊急解除機制</text>
+                <text x="215" y="354" font-size="8.5" fill="#64748b" text-anchor="middle">不得削弱防墜連續性或妨礙消防逃生</text>
 
                 <!-- 右側：修飾管槽剖面 -->
                 <rect x="430" y="60" width="350" height="350" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" rx="8"></rect>
@@ -811,7 +821,9 @@
                 <text x="675" y="275" font-size="7" fill="#ffffff" text-anchor="middle">控制訊號</text>
 
                 <text x="605" y="340" font-size="10" font-weight="bold" fill="#0f172a" text-anchor="middle">抗 UV 耐候硬質 PVC（消光深灰/深黑色調）</text>
-                <text x="605" y="358" font-size="9" fill="#dc2626" text-anchor="middle">嚴禁裸露黑白保溫海綿被覆管</text>
+                <text x="605" y="358" font-size="9" fill="#dc2626" text-anchor="middle">管槽尺寸、排水坡度及穿牆防水須依現場核定</text>
+                <rect x="450" y="375" width="310" height="24" fill="#fff7ed" stroke="#fb923c" rx="4"></rect>
+                <text x="605" y="391" font-size="8.5" fill="#9a3412" text-anchor="middle">不同金屬接觸處應隔離防蝕；施工及維護須設二次防墜</text>
               </svg>
             </div>
           </div>
