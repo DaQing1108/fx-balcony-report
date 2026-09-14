@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0112)file:///private/var/folders/pj/1681mx5j2r98nsylln8_t_r80000gn/T/canvas-87B846D6-A063-4EE4-BC63-0DCF3314E14E.html -->
+<!-- saved from url=(0112)file:///private/var/folders/pj/1681mx5j2r98nsylln8_t_r80000gn/T/canvas-D236EA1E-CAF0-4472-BBFD-010C0A7E6F00.html -->
 <html lang="zh-TW" class="scroll-smooth"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -45,6 +45,42 @@
     .custom-scrollbar::-webkit-scrollbar-track { background: #f1f5f9; }
     .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 9999px; }
     .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+    .site-photo-grid {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: 1rem;
+    }
+    .site-photo-card {
+      grid-column: span 6;
+      overflow: hidden;
+      border: 1px solid #e2e8f0;
+      border-radius: 0.75rem;
+      background: #fff;
+      box-shadow: 0 1px 2px rgb(15 23 42 / 0.06);
+    }
+    .site-photo-card--wide { grid-column: span 12; }
+    .site-photo-card img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      background: #e2e8f0;
+    }
+    .site-photo-card--wide img { height: 420px; }
+    .site-photo-card figcaption { padding: 0.9rem 1rem 1rem; }
+    .site-photo-card h4 { color: #0f172a; font-size: 0.9rem; font-weight: 700; }
+    .site-photo-card p { margin-top: 0.3rem; color: #64748b; font-size: 0.75rem; line-height: 1.6; }
+    @media (max-width: 767px) {
+      .site-photo-card,
+      .site-photo-card--wide { grid-column: span 12; }
+      .site-photo-card img,
+      .site-photo-card--wide img { height: 250px; }
+    }
+    @media print {
+      .site-photo-grid { gap: 0.55rem; }
+      .site-photo-card { break-inside: avoid; box-shadow: none; }
+      .site-photo-card img,
+      .site-photo-card--wide img { height: 190px; }
+    }
   </style>
 <style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:"Noto Sans TC", Inter, sans-serif;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:"JetBrains Mono", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.pointer-events-none{pointer-events:none}.absolute{position:absolute}.relative{position:relative}.sticky{position:sticky}.inset-0{inset:0px}.top-0{top:0px}.z-10{z-index:10}.z-50{z-index:50}.mx-auto{margin-left:auto;margin-right:auto}.mb-1{margin-bottom:0.25rem}.mb-2{margin-bottom:0.5rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mr-2{margin-right:0.5rem}.mt-0\.5{margin-top:0.125rem}.mt-1{margin-top:0.25rem}.mt-3{margin-top:0.75rem}.mt-4{margin-top:1rem}.mt-5{margin-top:1.25rem}.mt-6{margin-top:1.5rem}.mt-8{margin-top:2rem}.block{display:block}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.h-16{height:4rem}.h-2{height:0.5rem}.h-2\.5{height:0.625rem}.h-3\.5{height:0.875rem}.h-4{height:1rem}.h-5{height:1.25rem}.h-8{height:2rem}.h-9{height:2.25rem}.h-auto{height:auto}.w-1\/2{width:50%}.w-2{width:0.5rem}.w-2\.5{width:0.625rem}.w-3\.5{width:0.875rem}.w-4{width:1rem}.w-5{width:1.25rem}.w-8{width:2rem}.w-9{width:2.25rem}.w-full{width:100%}.min-w-\[240px\]{min-width:240px}.min-w-\[720px\]{min-width:720px}.min-w-\[760px\]{min-width:760px}.min-w-\[780px\]{min-width:780px}.max-w-3xl{max-width:48rem}.max-w-7xl{max-width:80rem}.shrink-0{flex-shrink:0}.border-collapse{border-collapse:collapse}@keyframes pulse{50%{opacity:.5}}.animate-pulse{animation:pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite}.cursor-pointer{cursor:pointer}.list-decimal{list-style-type:decimal}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1\.5{gap:0.375rem}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.space-x-1 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(0.25rem * var(--tw-space-x-reverse));margin-left:calc(0.25rem * calc(1 - var(--tw-space-x-reverse)))}.space-x-1\.5 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(0.375rem * var(--tw-space-x-reverse));margin-left:calc(0.375rem * calc(1 - var(--tw-space-x-reverse)))}.space-x-2 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(0.5rem * var(--tw-space-x-reverse));margin-left:calc(0.5rem * calc(1 - var(--tw-space-x-reverse)))}.space-x-2\.5 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(0.625rem * var(--tw-space-x-reverse));margin-left:calc(0.625rem * calc(1 - var(--tw-space-x-reverse)))}.space-x-3 > :not([hidden]) ~ :not([hidden]){--tw-space-x-reverse:0;margin-right:calc(0.75rem * var(--tw-space-x-reverse));margin-left:calc(0.75rem * calc(1 - var(--tw-space-x-reverse)))}.space-y-12 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(3rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(3rem * var(--tw-space-y-reverse))}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.space-y-2\.5 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.625rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.625rem * var(--tw-space-y-reverse))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.divide-y > :not([hidden]) ~ :not([hidden]){--tw-divide-y-reverse:0;border-top-width:calc(1px * calc(1 - var(--tw-divide-y-reverse)));border-bottom-width:calc(1px * var(--tw-divide-y-reverse))}.divide-slate-200 > :not([hidden]) ~ :not([hidden]){--tw-divide-opacity:1;border-color:rgb(226 232 240 / var(--tw-divide-opacity, 1))}.overflow-hidden{overflow:hidden}.overflow-x-auto{overflow-x:auto}.scroll-smooth{scroll-behavior:smooth}.rounded{border-radius:0.25rem}.rounded-2xl{border-radius:1rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-md{border-radius:0.375rem}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-b{border-bottom-width:1px}.border-r{border-right-width:1px}.border-t{border-top-width:1px}.border-amber-200{--tw-border-opacity:1;border-color:rgb(253 230 138 / var(--tw-border-opacity, 1))}.border-sky-200{--tw-border-opacity:1;border-color:rgb(186 230 253 / var(--tw-border-opacity, 1))}.border-sky-400\/30{border-color:rgb(56 189 248 / 0.3)}.border-slate-100{--tw-border-opacity:1;border-color:rgb(241 245 249 / var(--tw-border-opacity, 1))}.border-slate-200{--tw-border-opacity:1;border-color:rgb(226 232 240 / var(--tw-border-opacity, 1))}.border-slate-200\/80{border-color:rgb(226 232 240 / 0.8)}.border-slate-300{--tw-border-opacity:1;border-color:rgb(203 213 225 / var(--tw-border-opacity, 1))}.border-slate-700{--tw-border-opacity:1;border-color:rgb(51 65 85 / var(--tw-border-opacity, 1))}.border-slate-800{--tw-border-opacity:1;border-color:rgb(30 41 59 / var(--tw-border-opacity, 1))}.border-white\/10{border-color:rgb(255 255 255 / 0.1)}.bg-amber-100{--tw-bg-opacity:1;background-color:rgb(254 243 199 / var(--tw-bg-opacity, 1))}.bg-amber-400\/20{background-color:rgb(251 191 36 / 0.2)}.bg-amber-50{--tw-bg-opacity:1;background-color:rgb(255 251 235 / var(--tw-bg-opacity, 1))}.bg-amber-50\/30{background-color:rgb(255 251 235 / 0.3)}.bg-emerald-400{--tw-bg-opacity:1;background-color:rgb(52 211 153 / var(--tw-bg-opacity, 1))}.bg-indigo-600{--tw-bg-opacity:1;background-color:rgb(79 70 229 / var(--tw-bg-opacity, 1))}.bg-sky-100{--tw-bg-opacity:1;background-color:rgb(224 242 254 / var(--tw-bg-opacity, 1))}.bg-sky-400{--tw-bg-opacity:1;background-color:rgb(56 189 248 / var(--tw-bg-opacity, 1))}.bg-sky-400\/20{background-color:rgb(56 189 248 / 0.2)}.bg-sky-50{--tw-bg-opacity:1;background-color:rgb(240 249 255 / var(--tw-bg-opacity, 1))}.bg-sky-50\/50{background-color:rgb(240 249 255 / 0.5)}.bg-sky-500{--tw-bg-opacity:1;background-color:rgb(14 165 233 / var(--tw-bg-opacity, 1))}.bg-sky-500\/20{background-color:rgb(14 165 233 / 0.2)}.bg-sky-600{--tw-bg-opacity:1;background-color:rgb(2 132 199 / var(--tw-bg-opacity, 1))}.bg-slate-100{--tw-bg-opacity:1;background-color:rgb(241 245 249 / var(--tw-bg-opacity, 1))}.bg-slate-50{--tw-bg-opacity:1;background-color:rgb(248 250 252 / var(--tw-bg-opacity, 1))}.bg-slate-50\/50{background-color:rgb(248 250 252 / 0.5)}.bg-slate-900{--tw-bg-opacity:1;background-color:rgb(15 23 42 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-white\/5{background-color:rgb(255 255 255 / 0.05)}.bg-white\/90{background-color:rgb(255 255 255 / 0.9)}.bg-\[radial-gradient\(\#38bdf8_1px\2c transparent_1px\)\]{background-image:radial-gradient(#38bdf8 1px,transparent 1px)}.bg-gradient-to-b{background-image:linear-gradient(to bottom, var(--tw-gradient-stops))}.from-slate-900{--tw-gradient-from:#0f172a var(--tw-gradient-from-position);--tw-gradient-to:rgb(15 23 42 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.to-slate-900{--tw-gradient-to:#0f172a var(--tw-gradient-to-position)}.p-1{padding:0.25rem}.p-2{padding:0.5rem}.p-2\.5{padding:0.625rem}.p-3{padding:0.75rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.px-2\.5{padding-left:0.625rem;padding-right:0.625rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-4{padding-left:1rem;padding-right:1rem}.py-0\.5{padding-top:0.125rem;padding-bottom:0.125rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem}.py-10{padding-top:2.5rem;padding-bottom:2.5rem}.py-12{padding-top:3rem;padding-bottom:3rem}.py-8{padding-top:2rem;padding-bottom:2rem}.pb-3{padding-bottom:0.75rem}.pb-4{padding-bottom:1rem}.pb-5{padding-bottom:1.25rem}.pl-5{padding-left:1.25rem}.pt-3{padding-top:0.75rem}.pt-4{padding-top:1rem}.pt-6{padding-top:1.5rem}.text-left{text-align:left}.text-center{text-align:center}.text-justify{text-align:justify}.font-mono{font-family:"JetBrains Mono", monospace}.font-sans{font-family:"Noto Sans TC", Inter, sans-serif}.text-2xl{font-size:1.5rem;line-height:2rem}.text-\[10px\]{font-size:10px}.text-\[11px\]{font-size:11px}.text-base{font-size:1rem;line-height:1.5rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.font-extrabold{font-weight:800}.font-medium{font-weight:500}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.leading-relaxed{line-height:1.625}.leading-tight{line-height:1.25}.tracking-tight{letter-spacing:-0.025em}.tracking-wider{letter-spacing:0.05em}.text-amber-300{--tw-text-opacity:1;color:rgb(252 211 77 / var(--tw-text-opacity, 1))}.text-amber-300\/80{color:rgb(252 211 77 / 0.8)}.text-amber-400{--tw-text-opacity:1;color:rgb(251 191 36 / var(--tw-text-opacity, 1))}.text-amber-600{--tw-text-opacity:1;color:rgb(217 119 6 / var(--tw-text-opacity, 1))}.text-amber-700{--tw-text-opacity:1;color:rgb(180 83 9 / var(--tw-text-opacity, 1))}.text-amber-800{--tw-text-opacity:1;color:rgb(146 64 14 / var(--tw-text-opacity, 1))}.text-emerald-400{--tw-text-opacity:1;color:rgb(52 211 153 / var(--tw-text-opacity, 1))}.text-emerald-600{--tw-text-opacity:1;color:rgb(5 150 105 / var(--tw-text-opacity, 1))}.text-emerald-700{--tw-text-opacity:1;color:rgb(4 120 87 / var(--tw-text-opacity, 1))}.text-rose-400{--tw-text-opacity:1;color:rgb(251 113 133 / var(--tw-text-opacity, 1))}.text-rose-600{--tw-text-opacity:1;color:rgb(225 29 72 / var(--tw-text-opacity, 1))}.text-rose-700{--tw-text-opacity:1;color:rgb(190 18 60 / var(--tw-text-opacity, 1))}.text-sky-300{--tw-text-opacity:1;color:rgb(125 211 252 / var(--tw-text-opacity, 1))}.text-sky-300\/80{color:rgb(125 211 252 / 0.8)}.text-sky-400{--tw-text-opacity:1;color:rgb(56 189 248 / var(--tw-text-opacity, 1))}.text-sky-600{--tw-text-opacity:1;color:rgb(2 132 199 / var(--tw-text-opacity, 1))}.text-sky-700{--tw-text-opacity:1;color:rgb(3 105 161 / var(--tw-text-opacity, 1))}.text-sky-900{--tw-text-opacity:1;color:rgb(12 74 110 / var(--tw-text-opacity, 1))}.text-slate-100{--tw-text-opacity:1;color:rgb(241 245 249 / var(--tw-text-opacity, 1))}.text-slate-200{--tw-text-opacity:1;color:rgb(226 232 240 / var(--tw-text-opacity, 1))}.text-slate-300{--tw-text-opacity:1;color:rgb(203 213 225 / var(--tw-text-opacity, 1))}.text-slate-400{--tw-text-opacity:1;color:rgb(148 163 184 / var(--tw-text-opacity, 1))}.text-slate-500{--tw-text-opacity:1;color:rgb(100 116 139 / var(--tw-text-opacity, 1))}.text-slate-600{--tw-text-opacity:1;color:rgb(71 85 105 / var(--tw-text-opacity, 1))}.text-slate-700{--tw-text-opacity:1;color:rgb(51 65 85 / var(--tw-text-opacity, 1))}.text-slate-800{--tw-text-opacity:1;color:rgb(30 41 59 / var(--tw-text-opacity, 1))}.text-slate-900{--tw-text-opacity:1;color:rgb(15 23 42 / var(--tw-text-opacity, 1))}.text-slate-950{--tw-text-opacity:1;color:rgb(2 6 23 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.underline{-webkit-text-decoration-line:underline;text-decoration-line:underline}.decoration-dotted{-webkit-text-decoration-style:dotted;text-decoration-style:dotted}.underline-offset-4{text-underline-offset:4px}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.opacity-10{opacity:0.1}.shadow-inner{--tw-shadow:inset 0 2px 4px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:inset 0 2px 4px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-md{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sky-200{--tw-shadow-color:#bae6fd;--tw-shadow:var(--tw-shadow-colored)}.outline-none{outline:2px solid transparent;outline-offset:2px}.backdrop-blur-md{--tw-backdrop-blur:blur(12px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.\[background-size\:16px_16px\]{background-size:16px 16px}.selection\:bg-sky-500 *::selection{--tw-bg-opacity:1;background-color:rgb(14 165 233 / var(--tw-bg-opacity, 1))}.selection\:text-white *::selection{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.selection\:bg-sky-500::selection{--tw-bg-opacity:1;background-color:rgb(14 165 233 / var(--tw-bg-opacity, 1))}.selection\:text-white::selection{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.hover\:bg-slate-100:hover{--tw-bg-opacity:1;background-color:rgb(241 245 249 / var(--tw-bg-opacity, 1))}.hover\:bg-slate-200:hover{--tw-bg-opacity:1;background-color:rgb(226 232 240 / var(--tw-bg-opacity, 1))}.hover\:bg-slate-800:hover{--tw-bg-opacity:1;background-color:rgb(30 41 59 / var(--tw-bg-opacity, 1))}.hover\:text-sky-300:hover{--tw-text-opacity:1;color:rgb(125 211 252 / var(--tw-text-opacity, 1))}.hover\:text-sky-600:hover{--tw-text-opacity:1;color:rgb(2 132 199 / var(--tw-text-opacity, 1))}.hover\:text-slate-900:hover{--tw-text-opacity:1;color:rgb(15 23 42 / var(--tw-text-opacity, 1))}.focus\:ring-1:focus{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.focus\:ring-sky-500:focus{--tw-ring-opacity:1;--tw-ring-color:rgb(14 165 233 / var(--tw-ring-opacity, 1))}@media (min-width: 640px){.sm\:inline{display:inline}.sm\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.sm\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}.sm\:flex-row{flex-direction:row}.sm\:items-center{align-items:center}.sm\:p-8{padding:2rem}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\:text-3xl{font-size:1.875rem;line-height:2.25rem}.sm\:text-base{font-size:1rem;line-height:1.5rem}.sm\:text-lg{font-size:1.125rem;line-height:1.75rem}.sm\:text-sm{font-size:0.875rem;line-height:1.25rem}}@media (min-width: 768px){.md\:flex{display:flex}.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.md\:flex-row{flex-direction:row}.md\:items-end{align-items:flex-end}}@media (min-width: 1024px){.lg\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.lg\:px-8{padding-left:2rem;padding-right:2rem}.lg\:text-4xl{font-size:2.25rem;line-height:2.5rem}}</style></head>
 <body class="bg-slate-50 text-slate-800 antialiased font-sans selection:bg-sky-500 selection:text-white">
@@ -132,7 +168,7 @@
             <span>天井挑空水平增建判定</span>
           </div>
           <p class="text-xs text-slate-600 leading-relaxed">
-            使照竣工圖上天井為「法定垂直挑空」。私設平台在《建築法》屬「挑空違規增建（二次施工）」。本規範嚴格要求**透空率 $\ge 67\%$**、**模組化可拆卸**，並定義為「冷氣維修防墜貓道」非生活陽台外推，搭配住戶切結書化解查報即拆風險。
+            使照竣工圖上天井為「法定垂直挑空」。私設平台在《建築法》屬「挑空違規增建（二次施工）」。本規範嚴格要求<strong class="text-slate-900 font-bold">透空率 ≧ 67%</strong>、<strong class="text-slate-900 font-bold">模組化可拆卸</strong>，並定義為「冷氣維修防墜貓道」非生活陽台外推，搭配住戶切結書化解查報即拆風險。
           </p>
         </div>
 
@@ -143,7 +179,7 @@
             <span>法定防墜設施優先保障</span>
           </div>
           <p class="text-xs text-slate-600 leading-relaxed">
-            依《公寓大廈管理條例》第 8 條第 2 項，家中有 12 歲以下兒童或 65 歲以上長者，得設置妨礙防盜卻有利防墜之設施。新北市認定**「隱形鐵窗」為合法防墜設施**，社區不得禁止，但管委會有權制定統一色彩、線徑與不凸出外牆之標準。
+            依《公寓大廈管理條例》第 8 條第 2 項，家中有 12 歲以下兒童或 65 歲以上長者，得設置妨礙防盜卻有利防墜之設施。新北市認定<strong class="text-slate-900 font-bold">「隱形鐵窗」為合法防墜設施</strong>，社區不得禁止，但管委會有權制定統一色彩、線徑與不凸出外牆之標準。
           </p>
         </div>
 
@@ -231,8 +267,39 @@
           <h3>本報告技術條文、尺寸與圖說之「現場照片直接取樣依據」完整對照清單</h3>
         </div>
         <p class="text-xs text-slate-600 mb-4 leading-relaxed">
-          本報告並非憑空杜撰抽象規定，而是針對住戶現場已施作的<strong>兩大真實工程影像（照片一：小天井水溝蓋現況；照片二：3 樓立式雙層架＋全面隱形鐵窗現況）</strong>進行嚴謹的工程瑕疵鑑定與法規回溯，將照片中的實體細節提煉為規範與施工圖：
+          本報告依據現場實勘影像，從<strong>建築立面、室外機配置、小天井格柵及冷媒管線收納</strong>四個視角交叉檢視，並將可辨識的施工樣態對照後續技術規範與施工圖說。照片僅作為現況紀錄與審議參考，實際尺寸、材質及承載性能仍應以現場量測、結構計算與合格證明文件為準。
         </p>
+
+        <div class="site-photo-grid mb-6" aria-label="現場實勘照片集">
+          <figure class="site-photo-card site-photo-card--wide">
+            <img src="assets/photos/facade-context.jpg" alt="中庭側外牆與上下樓層室外機配置全景" loading="lazy">
+            <figcaption>
+              <h4>現況全景｜中庭立面與垂直配置關係</h4>
+              <p>呈現上下樓層外樑、女兒牆、小天井與室外機架的相對位置，供檢視立面退縮、垂直軸線及維修動線。</p>
+            </figcaption>
+          </figure>
+          <figure class="site-photo-card">
+            <img src="assets/photos/facade-double-stack.jpg" alt="外樑凹槽內雙層室外機架與防墜鋼索" loading="lazy">
+            <figcaption>
+              <h4>樣態 A｜外樑凹槽雙層立架</h4>
+              <p>可辨識雙層機架、防墜鋼索與格柵踏面配置，適合作為立面一致性及檢修空間的對照案例。</p>
+            </figcaption>
+          </figure>
+          <figure class="site-photo-card">
+            <img src="assets/photos/lightwell-grating.jpg" alt="小天井金屬格柵及尚未整理的冷媒管線近照" loading="lazy">
+            <figcaption>
+              <h4>細部近照｜小天井格柵與管線</h4>
+              <p>格柵開孔、邊框固定及跨越踏面的冷媒管線清楚可見，可供後續檢查防滑、防翻與防掉落措施。</p>
+            </figcaption>
+          </figure>
+          <figure class="site-photo-card site-photo-card--wide">
+            <img src="assets/photos/wall-mounted-units.jpg" alt="後陽台牆面多台室外機與淺色修飾管槽" loading="lazy">
+            <figcaption>
+              <h4>樣態 B｜壁掛多機排列與修飾管槽</h4>
+              <p>呈現多台室外機、壁掛支架及集中管槽配置，供比較機組密度、窗面遮蔽、排熱條件與外觀整理效果。</p>
+            </figcaption>
+          </figure>
+        </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 text-xs">
           <!-- 照片一依據卡片 -->
@@ -252,7 +319,7 @@
                 </li>
                 <li class="flex items-start gap-2">
                   <span class="text-emerald-400 font-bold shrink-0">✔ 採納優點：</span>
-                  <span><strong>條狀開孔透空率約 70%：</strong>開孔均勻，本報告引證新北市《建築物裝飾性構造物設置要點》對透空率 $\ge 67\%$（2/3）之規定，確認自然採光與垂直排氣對流通暢。</span>
+                  <span><strong>條狀開孔透空率約 70%：</strong>開孔均勻，本報告引證新北市《建築物裝飾性構造物設置要點》對透空率 ≧ 67%（2/3）之規定，確認自然採光與垂直排氣對流通暢。</span>
                 </li>
                 <li class="flex items-start gap-2">
                   <span class="text-rose-400 font-bold shrink-0">✘ 糾正致命盲點：</span>
@@ -260,7 +327,7 @@
                 </li>
                 <li class="flex items-start gap-2">
                   <span class="text-rose-400 font-bold shrink-0">✘ 糾正結構風險：</span>
-                  <span><strong>踏面光滑無齒痕、疑似單純平放：</strong>光滑表面遇水易滑倒，踩踏端點有翻覆之虞。本報告<strong>第八、九條與圖二 FX-DTL-02</strong> 明訂必須具備「齒化防滑」、「單點活載重 $\ge 200\text{ kg}$」及「不銹鋼馬鞍夾（Saddle Clip）對鎖固定」。</span>
+                  <span><strong>踏面光滑無齒痕、疑似單純平放：</strong>光滑表面遇水易滑倒，踩踏端點有翻覆之虞。本報告<strong>第八、九條與圖二 FX-DTL-02</strong> 明訂必須具備「齒化防滑」、「單點活載重 ≧ 200 kg」及「不銹鋼馬鞍夾（Saddle Clip）對鎖固定」。</span>
                 </li>
               </ul>
             </div>
@@ -290,7 +357,7 @@
                 </li>
                 <li class="flex items-start gap-2">
                   <span class="text-emerald-400 font-bold shrink-0">✔ 採納優點：</span>
-                  <span><strong>隱形鐵窗垂直貼齊樑內側：</strong>鋼索間距 $\le 10\text{ cm}$，未突出大樓外立面，依《公寓大廈管理條例》第 8 條第 2 項確認為<strong>合法防墜設施</strong>，非封閉式違建鐵鋁窗。</span>
+                  <span><strong>隱形鐵窗垂直貼齊樑內側：</strong>鋼索間距 ≦ 10 cm，未突出大樓外立面，依《公寓大廈管理條例》第 8 條第 2 項確認為<strong>合法防墜設施</strong>，非封閉式違建鐵鋁窗。</span>
                 </li>
                 <li class="flex items-start gap-2">
                   <span class="text-amber-400 font-bold shrink-0">⚠ 補強維修機制：</span>
@@ -758,20 +825,20 @@
               <td class="p-2.5 border-r border-slate-200 font-medium">遮蔽百葉格柵</td>
               <td class="p-2.5 border-r border-slate-200">粉體塗裝鋁合金或烤漆不銹鋼格柵</td>
               <td class="p-2.5 border-r border-slate-200">消光黑（RAL 9005）大樓指定色</td>
-              <td class="p-2.5 text-sky-700 font-bold">淨透空率 $\ge 67\%$，滿足散熱防跳機要求。</td>
+              <td class="p-2.5 text-sky-700 font-bold">淨透空率 ≧ 67%，滿足散熱防跳機要求。</td>
             </tr>
             <tr>
               <td rowspan="3" class="p-2.5 font-bold text-slate-900 bg-slate-50/50 border-r border-slate-200">天井鋼格板<br>(檢修水溝蓋)</td>
               <td class="p-2.5 border-r border-slate-200 font-medium">承重鋼格柵</td>
               <td class="p-2.5 border-r border-slate-200">熱浸鍍鋅齒化格板（CNS 1244）扁鋼 32×5mm</td>
               <td class="p-2.5 border-r border-slate-200">熱浸鍍鋅原色 / 消光黑漆</td>
-              <td class="p-2.5 text-rose-600 font-bold">單點集中載重 $\ge 200\text{ kg}$，鋸齒防滑表面。</td>
+              <td class="p-2.5 text-rose-600 font-bold">單點集中載重 ≧ 200 kg，鋸齒防滑表面。</td>
             </tr>
             <tr>
               <td class="p-2.5 border-r border-slate-200 font-medium">邊框托架與扣件</td>
               <td class="p-2.5 border-r border-slate-200">L 50×50×5mm 鍍鋅角鋼；馬鞍夾對鎖扣件</td>
               <td class="p-2.5 border-r border-slate-200">SUS304 / 鍍鋅防腐處理</td>
-              <td class="p-2.5">M10 化學錨栓植深 $\ge 50\text{ mm}$，對角 4 點機械固定。</td>
+              <td class="p-2.5">M10 化學錨栓植深 ≧ 50 mm，對角 4 點機械固定。</td>
             </tr>
             <tr>
               <td class="p-2.5 border-r border-slate-200 font-medium">底層防落細目網</td>
@@ -784,7 +851,7 @@
               <td class="p-2.5 border-r border-slate-200 font-medium">防墜鋼索與軌道</td>
               <td class="p-2.5 border-r border-slate-200">直徑 1.5~2.0mm SUS316 包膜鋼絲；鋁軌底座</td>
               <td class="p-2.5 border-r border-slate-200">鋁軌消光深灰/黑；鋼索透明</td>
-              <td class="p-2.5">抗拉破斷力 $\ge 130\text{ kgf}$，鋼索間距 $\le 10\text{ cm}$。</td>
+              <td class="p-2.5">抗拉破斷力 ≧ 130 kgf，鋼索間距 ≦ 10 cm。</td>
             </tr>
             <tr>
               <td class="p-2.5 border-r border-slate-200 font-medium">檢修與逃生機制</td>
@@ -882,7 +949,7 @@
               </label>
               <label class="flex items-start space-x-2.5 p-2 bg-white rounded-lg border border-slate-200 cursor-pointer hover:bg-slate-100 transition">
                 <input type="checkbox" onchange="updateChecklist()" class="chk-item mt-0.5 rounded text-sky-600 focus:ring-sky-500">
-                <span>12. 隱形鐵窗鋼索間距 $\le 10\text{ cm}$ 且張力破斷力檢測達標</span>
+                <span>12. 隱形鐵窗鋼索間距 ≦ 10 cm 且張力破斷力檢測達標</span>
               </label>
               <label class="flex items-start space-x-2.5 p-2 bg-white rounded-lg border border-slate-200 cursor-pointer hover:bg-slate-100 transition">
                 <input type="checkbox" onchange="updateChecklist()" class="chk-item mt-0.5 rounded text-sky-600 focus:ring-sky-500">
